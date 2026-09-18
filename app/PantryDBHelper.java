@@ -25,11 +25,11 @@ public class PantryDBHelper extends SQLiteOpenHelper{
     //create the table
     @override
     public void onCreate(SQLiteDatabase db){
-        String createTable = "CREATE TABLE " + TABLE_ITEMS + " (" +
+        String createTable="CREATE TABLE "+TABLE_ITEMS +"(" +
                 COL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 COL_NAME + " TEXT NOT NULL, " +
-                COL_CATEGORY + " TEXT, " +
-                COL_QUANTITY + " INTEGER, " +
+                COL_CATEGORY+ " TEXT, " +
+                COL_QUANTITY+" INTEGER, " +
                 COL_UNIT + " TEXT, " +
                 COL_EXPIRY + " TEXT)";
         db.execSQL(createTable);
