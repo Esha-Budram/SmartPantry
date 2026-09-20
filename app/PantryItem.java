@@ -7,7 +7,7 @@ public class PantryItem{
     private String category;
     private int quantity;
     private String unit;
-    private String expiryDate;
+    private String expiryDate
 
     public PantryItem() {}//creating method holder
     //declaring and initialising variables
