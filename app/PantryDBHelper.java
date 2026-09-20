@@ -32,11 +32,11 @@ public class PantryDBHelper extends SQLiteOpenHelper{
                 COL_QUANTITY+" INTEGER, " +
                 COL_UNIT + " TEXT, " +
                 COL_EXPIRY + " TEXT)";
-        db.execSQL(createTable);
+        db.execSQL(createTable)
     }
     @override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS" + TABLE_ITEMS);
-        onCreate(db);
+        onCreate(db)
     }
 }
