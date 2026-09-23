@@ -1,4 +1,4 @@
-package com.yourpackage.pantryapplication.data;
+package com.eshabudram.smartpantry.data;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -19,11 +19,11 @@ public class PantryDBHelper extends SQLiteOpenHelper{
 
     // create the pantry helper method
     public PantryDBHelper(Context context){
-        super(context,DATABASE_NAME,null,DATABSE_VERSION)
+        super(context,DATABASE_NAME,null,DATABASE_VERSION);
     }
     //override the abstract create database method
     //create the table
-    @override
+    @Override
     public void onCreate(SQLiteDatabase db){
         String createTable="CREATE TABLE "+TABLE_ITEMS +"(" +
                 COL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
@@ -32,11 +32,11 @@ public class PantryDBHelper extends SQLiteOpenHelper{
                 COL_QUANTITY+" INTEGER, " +
                 COL_UNIT + " TEXT, " +
                 COL_EXPIRY + " TEXT)";
-        db.execSQL(createTable)
+        db.execSQL(createTable);
     }
-    @override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS" + TABLE_ITEMS);
-        onCreate(db)
+    @Override
+    public void onUpgrade(SQLiteDatabase db,int oldVersion,int newVersion) {
+        db.execSQL("DROP TABLE IF EXISTS "+TABLE_ITEMS);
+        onCreate(db);
     }
 }

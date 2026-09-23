@@ -7,7 +7,7 @@ public class PantryItem{
     private String category;
     private int quantity;
     private String unit;
-    private String expiryDate
+    private String expiryDate;
 
     public PantryItem() {}//creating method holder
     //declaring and initialising variables
@@ -28,31 +28,31 @@ public class PantryItem{
     public String getName(){
         return name;
     }
-    public void setname(String name){
+    public void setName(String name){
         this.name=name;
     }
-    public String getcategory(){
+    public String getCategory(){
         return category;
     }
-    public void setcategory(String category){
+    public void setCategory(String category){
         this.category=category;
     }
-    public int getquantity(){
+    public int getQuantity(){
         return quantity;
     }
-    public void setquantity(int quantity){
+    public void setQuantity(int quantity){
         this.quantity=quantity;
     }
-    public String getunit(){
+    public String getUnit(){
         return unit;
     }
-    public void setunit(String unit){
+    public void setUnit(String unit){
         this.unit=unit;
     }
-    public String getexpiryDate(){
+    public String getExpiryDate(){
         return expiryDate;
     }
-    public void setexpiryDate(String expiryDate){
+    public void setExpiryDate(String expiryDate){
         this.expiryDate = expiryDate;
     }
 }
