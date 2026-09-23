@@ -28,6 +28,19 @@ public class MainActivity extends AppCompatActivity {
         // Find the ListView from the layout
         listView = findViewById(R.id.listView);
 
+        //tapping thr item to edit
+        listView.setOnItemClickListener((parent,view,position,id)->{
+                PantryItem selectedItem=(PantryItem) listView.getItemAtPosition(position);
+
+                Intent intent=new Intent(MainActivity.this,AddEditItem.class);
+                intent.putExtra("id",selectedItem.getId());
+                intent.putExtra("name",selectedItem.getName());
+                intent.putExtra("category",selectedItem.getCategory());
+                intent.putExtra("quantity",selectedItem.getQuantity());
+                intent.putExtra("unit",selectedItem.getUnit());
+                intent.putExtra("expiryDate",selectedItem.getExpiryDate());
+                startActivity(intent);
+        });
         // Show the current items
         loadItems();
         com.google.android.material.floatingactionbutton.FloatingActionButton fabAddItem = findViewById(R.id.fabAddItem);
