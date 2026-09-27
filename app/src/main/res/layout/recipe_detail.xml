@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Recipe name, shown big at the top -->
+    <TextView
+        android:id="@+id/textDetailName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <!-- Small heading for the ingredients section -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Ingredients:"
+        android:textStyle="bold" />
+
+    <!-- List of ingredients, shown as one block of text -->
+    <TextView
+        android:id="@+id/textDetailIngredients"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <!-- Small heading for the steps section -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Steps:"
+        android:textStyle="bold" />
+
+    <!-- The preparation steps -->
+    <TextView
+        android:id="@+id/textDetailSteps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
