@@ -4,36 +4,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!--this is alist showing all pantry items -->
+    <!-- This is the list showing all pantry items -->
     <ListView
         android:id="@+id/listView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottomNav" />
 
-    <!--the + button opens the Add Item screen later -->
+    <!-- The + button opens the Add Item screen -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabAddItem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_above="@id/bottomNav"
         android:layout_alignParentEnd="true"
         android:layout_margin="16dp"
         android:contentDescription="Add item"
-        app:srcCompat="@android:drawable/ic_input_add"/>
-    <Button
-        android:id="@+id/SuggestedRecipesButton"
-        android:layout_width="wrap_content"
+        app:srcCompat="@android:drawable/ic_input_add" />
+
+    <!-- Bottom navigation bar connecting all main screens -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@id/fabAddItem"
-        android:layout_alignParentStart="true"
-        android:layout_margin="16dp"
-        android:text="Suggested Recipes" />
-    <Button
-        android:id="@+id/settingsButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/fabAddItem"
-        android:layout_alignParentEnd="true"
-        android:layout_margin="16dp"
-        android:text="Settings" />
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/bottom_nav_menu" />
+
 </RelativeLayout>
