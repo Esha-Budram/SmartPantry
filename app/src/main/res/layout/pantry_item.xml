@@ -2,25 +2,34 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="18dp"
+    android:background="#33FFFFFF"
+    android:layout_marginBottom="8dp"> <!-- creating a space between items-->
 
     <TextView
         android:id="@+id/textName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:background="#33FFFFFF"/>
 
     <TextView
         android:id="@+id/textDetails"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="14sp" />
+        android:textSize="16sp"
+        android:textColor="#FFFFFF"
+        android:background="#33FFFFFF"/>
 
     <TextView
         android:id="@+id/textExpiry"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="14sp" />
+        android:textSize="14sp"
+        android:textColor="#FFFFFF"
+        android:background="#33FFFFFF"/>
 
 </LinearLayout>
