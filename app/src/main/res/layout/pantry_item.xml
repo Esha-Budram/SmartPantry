@@ -4,9 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="18dp"
-    android:background="#33FFFFFF"
+    android:background="#66000000"
     android:layout_marginBottom="8dp"> <!-- creating a space between items-->
-
+    <!-- item name -->
     <TextView
         android:id="@+id/textName"
         android:layout_width="wrap_content"
@@ -14,22 +14,34 @@
         android:textSize="20sp"
         android:textStyle="bold"
         android:textColor="#FFFFFF"
-        android:background="#33FFFFFF"/>
-
+        android:background="#33FFFFFF"
+        android:shadowColor="#000000"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="3"/>
+    <!--quantity ands unit-->
     <TextView
         android:id="@+id/textDetails"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="16sp"
         android:textColor="#FFFFFF"
-        android:background="#33FFFFFF"/>
-
+        android:background="#33FFFFFF"
+        android:shadowColor="#000000"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="3"/>
+    <!--expiry date-->
     <TextView
         android:id="@+id/textExpiry"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="14sp"
         android:textColor="#FFFFFF"
-        android:background="#33FFFFFF"/>
+        android:background="#33FFFFFF"
+        android:shadowColor="#000000"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="3"/>
 
 </LinearLayout>

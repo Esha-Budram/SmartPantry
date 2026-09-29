@@ -1,5 +1,5 @@
 package com.eshabudram.smartpantry.data;
-
+//this class represents 1 ingredient that a recipe needs
 public class RecipeIngredient{
     private long id;
     private long recipeId;
@@ -8,12 +8,16 @@ public class RecipeIngredient{
     private String unit;
     public RecipeIngredient(){
     }
+    //a single recipe will have many ingredients
+    //constructor used when adding a new ingredient with all its details at once
     public RecipeIngredient(String ingredientName,double quantity,String unit){
         this.ingredientName=ingredientName;
         this.quantity=quantity;
         this.unit=unit;
 
     }
+    //getters and setters below let other classes read andchange these private fields safely
+
     public long getId(){
         return id;
     }

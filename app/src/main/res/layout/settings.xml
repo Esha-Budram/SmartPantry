@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/p3">
-
+<!--screen title-->
     <TextView
         android:id="@+id/textHeading"
         android:layout_width="match_parent"
@@ -15,9 +15,9 @@
         android:gravity="center"
         android:padding="16dp"
         android:textColor="#FFFFFF"
-        android:background="#80000000" />
+        android:background="#000" />
 
-    <!-- Simple on/off switch for expiring-soon alerts -->
+    <!-- on and off switch for expiring soon warning items -->
     <Switch
         android:id="@+id/switchExpiryAlerts"
         android:layout_width="wrap_content"
@@ -26,8 +26,14 @@
         android:layout_margin="24dp"
         android:text="Notify me about expiring items"
         android:textColor="#FFFFFF"
-        android:textSize="16sp"/>
-
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:background="#33FFFFFF"
+        android:shadowColor="#000000"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="3"/>
+    <!--bootom navigation menu-->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNav"
         android:layout_width="match_parent"

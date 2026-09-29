@@ -13,6 +13,8 @@ import com.eshabudram.smartpantry.data.Recipe;
 import com.eshabudram.smartpantry.data.RecipeMatcher;
 import com.eshabudram.smartpantry.data.RecipeRepository;
 import com.eshabudram.smartpantry.ui.RecipeAdapter;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 import java.util.List;
 
 //this class show only the recipes the user can currently make with what's in their pantry.
@@ -42,6 +44,22 @@ public class SuggestedRecipes extends AppCompatActivity{
             Intent intent = new Intent(SuggestedRecipes.this, RecipeDetail.class);
             intent.putExtra("recipeId", tappedRecipe.getId());
             startActivity(intent);
+        });
+        BottomNavigationView bottomNav = findViewById(R.id.bottomNav);
+        bottomNav.setSelectedItemId(R.id.nav_recipes);
+        bottomNav.setOnItemSelectedListener(item ->{
+            int id = item.getItemId();
+
+            if (id==R.id.nav_pantry){
+                startActivity(new Intent(SuggestedRecipes.this, MainActivity.class));
+                return true;
+            } else if (id==R.id.nav_settings){
+                startActivity(new Intent(SuggestedRecipes.this, Settings.class));
+                return true;
+            }
+
+            //navrecipes is this screen already
+            return true;
         });
     }
 

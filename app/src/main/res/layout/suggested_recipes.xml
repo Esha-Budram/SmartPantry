@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/p3">
+    android:background="@drawable/p3"><!--inserting backgrounf image-->
 
     <!-- Heading -->
     <TextView
@@ -16,9 +16,9 @@
         android:gravity="center"
         android:padding="16dp"
         android:textColor="#FFFFFF"
-        android:background="#80000000" />
+        android:background="#000" />
 
-    <!-- Empty state message -->
+    <!-- Empty warning message -->
     <TextView
         android:id="@+id/textEmptyMessage"
         android:layout_width="match_parent"
@@ -27,20 +27,27 @@
         android:padding="16dp"
         android:text="No recipes match your pantry yet, add more ingredients!"
         android:textColor="#FFFFFF"
-        android:textSize="16sp"
-        android:visibility="gone" />
+        android:textSize="26sp"
+        android:visibility="gone"
+        android:background="#33FFFFFF"
+        android:textStyle="bold"
+        android:shadowColor="#000000"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="3"/>
 
-    <!-- The scrollable recipe list -->
+    <!-- recipe list -->
     <ListView
         android:id="@+id/listRecipes"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/textHeading"
         android:layout_above="@id/bottomNav"
-        android:divider="#33FFFFFF"
+        android:background="#80000000"
+        android:divider="#FFFFFF"
         android:dividerHeight="1dp" />
 
-    <!-- Bottom navigation bar -->
+    <!-- bottom navigation bar -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNav"
         android:layout_width="match_parent"

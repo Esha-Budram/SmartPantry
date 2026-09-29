@@ -6,4 +6,11 @@
     </style>
 
     <style name="Theme.PantryApplication" parent="Base.Theme.PantryApplication" />
+    <style name="BottomNavTextActive">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="BottomNavTextInactive">
+        <item name="android:textSize">14sp</item>
+    </style>
 </resources>

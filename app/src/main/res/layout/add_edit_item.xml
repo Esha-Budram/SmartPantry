@@ -1,55 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Simple form for adding or editing a pantry item -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp">
-
-    <EditText
-        android:id="@+id/editName"
+    android:background="@drawable/p3">
+    <!-- heading for pantry-->
+    <TextView
+        android:id="@+id/textHeading"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Item name" />
-
-    <EditText
-        android:id="@+id/editCategory"
+        android:text="Smart Pantry"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:padding="16dp"
+        android:textColor="#FFFFFF"
+        android:background="#80000000"/>
+    <!--layout for the table-->
+    <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Category" />
+        android:padding="16dp"
+        android:layout_centerVertical="true"
+        android:stretchColumns="0">
 
-    <EditText
-        android:id="@+id/editQuantity"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Quantity"
-        android:inputType="number" />
+        <!-- items name row -->
+        <TableRow android:layout_marginBottom="12dp">
+            <EditText
+                android:id="@+id/editName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Item name"
+                android:textColor="#000000"
+                android:textColorHint="#666666"
+                android:background="@drawable/add_item_box" />
+        </TableRow>
+        <!-- quantity row -->
+        <TableRow android:layout_marginBottom="12dp">
+            <EditText
+                android:id="@+id/editQuantity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Quantity"
+                android:inputType="number"
+                android:textColor="#000000"
+                android:textColorHint="#666666"
+                android:background="@drawable/add_item_box" />
+        </TableRow>
+        <!-- unit row -->
+        <TableRow android:layout_marginBottom="12dp">
+            <EditText
+                android:id="@+id/editUnit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Unit (e.g. liters, pieces)"
+                android:textColor="#000000"
+                android:textColorHint="#666666"
+                android:background="@drawable/add_item_box" />
+        </TableRow>
+        <!-- expiry date row -->
+        <TableRow android:layout_marginBottom="16dp">
+            <EditText
+                android:id="@+id/editExpiry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Expiry date (yyyy-mm-dd)"
+                android:textColor="#000000"
+                android:textColorHint="#666666"
+                android:background="@drawable/add_item_box" />
+        </TableRow>
+        <!-- save button row -->
+        <TableRow android:layout_marginBottom="8dp">
+            <Button
+                android:id="@+id/saveButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Save Item" />
+        </TableRow>
 
-    <EditText
-        android:id="@+id/editUnit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Unit (e.g. liters, pieces)" />
-
-    <EditText
-        android:id="@+id/editExpiry"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Expiry date (yyyy-MM-dd)" />
-
-    <Button
-        android:id="@+id/saveButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Save Item" />
-
-    <Button
-        android:id="@+id/deleteButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Delete Item"
-        android:visibility="gone" />
-
-</LinearLayout>
+        <!-- delete button row -->
+        <TableRow>
+            <Button
+                android:id="@+id/deleteButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Delete Item"
+                android:visibility="gone" />
+        </TableRow>
+    </TableLayout>
+</RelativeLayout>

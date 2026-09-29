@@ -14,16 +14,14 @@ import com.eshabudram.smartpantry.data.PantryItem;
 
 import java.util.List;
 
-// This adapter connects our list of PantryItem objects to a ListView.
-// ArrayAdapter already does most of the work — we only need to say
-// "how should ONE row look" by overriding getView()
+//connects PantryItem objects to a ListView.
 
 public class PantryAdapter extends ArrayAdapter<PantryItem> {
     public PantryAdapter(Context context, List<PantryItem> items) {
         super(context, 0, items); // 0 is passed because we build the row layout ourselves below
     }
 
-    // Android calls this once per row, to build (or reuse) that row's view
+    //android calls this once per row to build that row view or t0 reuse it
     @NonNull
     @Override
     public View getView(int position, View convertView, @NonNull ViewGroup parent) {
@@ -32,16 +30,16 @@ public class PantryAdapter extends ArrayAdapter<PantryItem> {
                     .inflate(R.layout.pantry_item, parent, false);
         }
 
-        PantryItem item = getItem(position); // getting the pantry item for this row
+        PantryItem item=getItem(position); // getting the pantry item for this row
 
         // find the 3 text views inside the row layout
-        TextView textName = convertView.findViewById(R.id.textName);
-        TextView textDetails = convertView.findViewById(R.id.textDetails);
-        TextView textExpiry = convertView.findViewById(R.id.textExpiry);
+        TextView textName=convertView.findViewById(R.id.textName);
+        TextView textDetails=convertView.findViewById(R.id.textDetails);
+        TextView textExpiry=convertView.findViewById(R.id.textExpiry);
 
-        // fill the item's data in
+        // fill the item data in
         textName.setText(item.getName());
-        textDetails.setText(item.getQuantity() + " " + item.getUnit() + "." + item.getCategory());
+        textDetails.setText(item.getQuantity() + " " + item.getUnit());
         textExpiry.setText("Expiry Date: " + item.getExpiryDate());
 
         return convertView;

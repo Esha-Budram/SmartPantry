@@ -2,16 +2,31 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/p3">
 
-    <!-- This is the list showing all pantry items -->
+    <!-- header-->
+    <TextView
+        android:id="@+id/textHeading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Smart Pantry"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:padding="16dp"
+        android:textColor="#FFFFFF"
+        android:background="#000"/>
+
+    <!-- Scrollable pantry item list -->
     <ListView
         android:id="@+id/listView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/bottomNav" />
+        android:layout_below="@id/textHeading"
+        android:layout_above="@id/bottomNav"/>
 
-    <!-- The + button opens the Add Item screen -->
+    <!-- add item button -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabAddItem"
         android:layout_width="wrap_content"
@@ -22,12 +37,17 @@
         android:contentDescription="Add item"
         app:srcCompat="@android:drawable/ic_input_add" />
 
-    <!-- Bottom navigation bar connecting all main screens -->
+    <!-- reusable bottom navigation -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNav"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:background="@drawable/nav_background"
+        app:itemIconTint="#000000"
+        app:itemTextColor="#FFFFFF"
+        app:itemTextAppearanceActive="@style/BottomNavTextActive"
+        app:itemTextAppearanceInactive="@style/BottomNavTextInactive"
         app:menu="@menu/bottom_nav_menu" />
 
 </RelativeLayout>

@@ -3,13 +3,13 @@ plugins {
 }
 
 android {
-    namespace = "com.example.pantryapplication"
+    namespace = "com.eshabudram.smartpantry"
     compileSdk {
         version = release(37)
     }
 
     defaultConfig {
-        applicationId = "com.example.pantryapplication"
+        applicationId = "com.eshabudram.smartpantry"
         minSdk = 24
         targetSdk = 37
         versionCode = 1
@@ -39,4 +39,5 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.espresso.core)
     androidTestImplementation(libs.ext.junit)
+    implementation("com.google.android.material:material:1.12.0")
 }

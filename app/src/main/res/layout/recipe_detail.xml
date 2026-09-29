@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-    <!-- Recipe name, shown big at the top -->
+    <!-- recipe name -->
     <TextView
         android:id="@+id/textDetailName"
         android:layout_width="wrap_content"
@@ -13,7 +13,7 @@
         android:textSize="22sp"
         android:textStyle="bold" />
 
-    <!-- Small heading for the ingredients section -->
+    <!--small heading for the ingredients section -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -21,13 +21,13 @@
         android:text="Ingredients:"
         android:textStyle="bold" />
 
-    <!-- List of ingredients, shown as one block of text -->
+    <!-- list of ingredients in a block -->
     <TextView
         android:id="@+id/textDetailIngredients"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-    <!-- Small heading for the steps section -->
+    <!-- small heading for the steps section -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -35,7 +35,7 @@
         android:text="Steps:"
         android:textStyle="bold" />
 
-    <!-- The preparation steps -->
+    <!--preparation steps -->
     <TextView
         android:id="@+id/textDetailSteps"
         android:layout_width="wrap_content"

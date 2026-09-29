@@ -39,13 +39,13 @@ public class MainActivity extends AppCompatActivity{
                 Intent intent=new Intent(MainActivity.this,AddEditItem.class);
                 intent.putExtra("id",selectedItem.getId());
                 intent.putExtra("name",selectedItem.getName());
-                intent.putExtra("category",selectedItem.getCategory());
                 intent.putExtra("quantity",selectedItem.getQuantity());
                 intent.putExtra("unit",selectedItem.getUnit());
                 intent.putExtra("expiryDate",selectedItem.getExpiryDate());
                 startActivity(intent);
         });
         BottomNavigationView bottomNav = findViewById(R.id.bottomNav);
+        bottomNav.setSelectedItemId(R.id.nav_pantry);
         bottomNav.setOnItemSelectedListener(item -> {
             int id = item.getItemId();
 
@@ -56,8 +56,6 @@ public class MainActivity extends AppCompatActivity{
                 startActivity(new Intent(MainActivity.this, Settings.class));
                 return true;
             }
-
-            // nav_pantry is this screen already, so nothing to do
             return true;
         });
         // Show the current items
@@ -76,7 +74,7 @@ public class MainActivity extends AppCompatActivity{
     }
 
     // Refresh the list every time this screen becomes visible again
-    // (important once we add items from another screen)
+
     @Override
     protected void onResume(){
         super.onResume();

@@ -4,16 +4,14 @@ package com.eshabudram.smartpantry.data;
 public class PantryItem{
     private long id;
     private String name;
-    private String category;
     private int quantity;
     private String unit;
     private String expiryDate;
 
     public PantryItem() {}//creating method holder
     //declaring and initialising variables
-    public PantryItem(String name,String category,int quantity,String unit, String expiryDate){
+    public PantryItem(String name,int quantity,String unit, String expiryDate){
         this.name=name;
-        this.category = category;
         this.quantity= quantity;
         this.unit=unit;
         this.expiryDate = expiryDate;
@@ -30,12 +28,6 @@ public class PantryItem{
     }
     public void setName(String name){
         this.name=name;
-    }
-    public String getCategory(){
-        return category;
-    }
-    public void setCategory(String category){
-        this.category=category;
     }
     public int getQuantity(){
         return quantity;

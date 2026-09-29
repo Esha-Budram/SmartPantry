@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--this manifest tells android which screens this app has and the order it runs-->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!--this holds the app settings-->
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -11,7 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PantryApplication">
-
+        <!--this is the pantry list screen. the intent filter opens this as the first screen when launched-->
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -20,17 +22,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <!-- this i sthe form screen that is used to add or edit itms-->
         <activity
             android:name=".AddEditItem"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+        <!--shows only the recipes that can be used with the items in pantry-->
         <activity
             android:name=".SuggestedRecipes"
             android:exported="false" />
+        <!--shows ingredients and steps for the selected recipe only-->
         <activity
             android:name=".RecipeDetail"
             android:exported="false" />
+        <!--this is the dsetting screen with expiry items toggle-->
         <activity
             android:name=".Settings"
             android:exported="false" />

@@ -11,7 +11,7 @@ import com.eshabudram.smartpantry.data.RecipeRepository;
 
 import java.util.List;
 
-// Shows the full details (ingredients + steps) for ONE recipe
+// Shows the full details ofingredients and steps for a recipe
 public class RecipeDetail extends AppCompatActivity {
 
     @Override
@@ -19,11 +19,11 @@ public class RecipeDetail extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.recipe_detail);
 
-        // Get the recipe's ID that was passed in from the Suggested Recipes screen
+        // Get the recipes id that was passed in from the Suggested Recipes screen
         long recipeId = getIntent().getLongExtra("recipeId", -1);
 
         // Load that one recipe from the database
-        RecipeRepository recipeRepository = new RecipeRepository(this);
+        RecipeRepository recipeRepository=new RecipeRepository(this);
         Recipe recipe = findRecipeById(recipeRepository.getAllRecipes(), recipeId);
 
         if (recipe != null) {

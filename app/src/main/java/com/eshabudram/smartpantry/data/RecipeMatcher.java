@@ -20,7 +20,7 @@ public class RecipeMatcher{
                 return false; // even if there is 1 missing ingredient it hides the recipe
             }
         }
-        return true; // every ingredient was found in enough quantity in ;pantry
+        return true; // every ingredient was found in enough quantity in pantry
     }
 
     //checking if the pantry has enough of 1 specific ingredient

@@ -30,7 +30,6 @@ public class RecipeRepository {
         values.put(PantryDBHelper.COL_RECIPE_NAME, name);
         values.put(PantryDBHelper.COL_RECIPE_STEPS, steps);
         long id=db.insert(PantryDBHelper.TABLE_RECIPES,null,values);
-        db.close();
         return id;
     }
 
@@ -45,7 +44,6 @@ public class RecipeRepository {
         values.put(PantryDBHelper.COL_RI_UNIT,unit);
 
         db.insert(PantryDBHelper.TABLE_RECIPE_INGREDIENTS,null, values);
-        db.close();
     }
     //this method saves a recipe with its ingredients together
     private void addRecipeWithIngredients(String name,String steps,Object[][]ingredientData){
@@ -108,7 +106,6 @@ public class RecipeRepository {
         }
 
         cursor.close();
-        db.close();
         return ingredients;
     }
     // Fills the database with a set of recipes, only runs once
@@ -133,16 +130,16 @@ public class RecipeRepository {
                         {"bread", 2.0, "slices"},
                         {"cheese", 2.0, "slices"},
                         {"butter", 1.0, "tsp"},
-                        {"lettuce", 1.0, "leaf"}
+                        {"lettuce", 1.0, "leaves"}
                 });
 
         addRecipeWithIngredients("Potato curry", "Chop vegetables, fry onion, chilli powder, tomato and garlic in oil, add salt and potato till soft.",
                 new Object[][]{
-                        {"onion", 1.0, "pieces"},
+                        {"onion", 20.0, "grams"},
                         {"crushed garlic", 1.0, "tbsp"},
                         {"tomato", 1.0, "pieces"},
                         {"oil", 3.0, "tbsp"},
-                        {"chilli powder", 3.0, "tbsp"},
+                        {"chilli powder", 45.0, "grams"},
                         {"salt", 1.0, "tbsp"},
                         {"Potato", 2.0, "kg"}
                 });
@@ -152,13 +149,13 @@ public class RecipeRepository {
                         {"banana", 30.0, "grams"},
                         {"flour", 250.0, "grams"},
                         {"egg", 1.0, "pieces"},
-                        {"milk", 125.0, "grams"}
+                        {"milk", 0.25, "litres"}
                 });
 
         addRecipeWithIngredients("Chicken strips and rice", "Cook rice, grill chicken and veg , combine with peri peri sauce.",
                 new Object[][]{
                         {"rice", 250.0, "grams"},
-                        {"chicken", 200.0, "g"},
+                        {"chicken", 200.0, "grams"},
                         {"carrot", 100.0, "grams"},
                         {"pepper", 50.0, "grams"}
 
@@ -178,17 +175,17 @@ public class RecipeRepository {
 
         addRecipeWithIngredients("Omelette", "Beat eggs with salt and black pepper, pour into buttered pan, add tomato, fold over.",
                 new Object[][]{
-                        {"egg", 2.0},
+                        {"egg", 2.0,"pieces"},
                         {"tomato", 10.0, "grams"},
                         {"butter", 1.0, "tbsp"},
-                        {"salt", 2.0, "gram"},
-                        {"black pepper", 1.0, "gram"}
+                        {"salt", 2.0, "grams"},
+                        {"black pepper", 1.0, "grams"}
                 });
 
         addRecipeWithIngredients("chicken and mayo Sandwich", "fry chicken fillet in oil,mix with mayo and spread on bread.",
                 new Object[][]{
-                        {"chicken", 100.0, "gram"},
-                        {"mayo", 1.0, "tbsp"},
+                        {"chicken", 100.0, "grams"},
+                        {"mayo", 15, "grams"},
                         {"bread", 2.0, "slices"},
                         {"oil", 3.0, "tbsp"}
                 });
@@ -196,17 +193,17 @@ public class RecipeRepository {
         addRecipeWithIngredients("Vegetable Soup", "Boil chopped vegetables with salt in stock until soft.",
                 new Object[][]{
                         {"carrot", 10.0, "grams"},
-                        {"potato", 100.0, "grams"},
+                        {"potato", 0.10, "kg"},
                         {"onion", 30.0, "grams"},
-                        {"stock", 2.0, "cup"},
-                        {"salt", 1.0, "tbsp"}
+                        {"veg stock", 2.0, "cups"},
+                        {"salt", 15, "grams"}
                 });
 
         addRecipeWithIngredients("Mashed Potatoes", "Boil potatoes, mash with butter and milk.",
                 new Object[][]{
-                        {"potato", 500.0, "grams"},
+                        {"potato", 0.5, "kg"},
                         {"butter", 3.0, "tbsp"},
-                        {"milk", 0.25, "cup"}
+                        {"milk", 0.15, "litres"}
                 });
 
         addRecipeWithIngredients("Garlic Bread", "Mix butter, pepper and garlic, spread on bread, toast.",
@@ -214,7 +211,7 @@ public class RecipeRepository {
                         {"bread", 2.0, "slices"},
                         {"butter", 1.0, "tbsp"},
                         {"garlic", 1.0, "cloves"},
-                        {"Black pepper", 1.0, "grams"}
+                        {"black pepper", 1.0, "grams"}
                 });
 
         addRecipeWithIngredients("Punch", "mix ingredients and serve with mint garnish.",
@@ -229,8 +226,8 @@ public class RecipeRepository {
 
         addRecipeWithIngredients("Mango and orange juice", "liquidize fruit with sugar, serve.",
                 new Object[][]{
-                        {"mango", 2.4, "kilograms"},
-                        {"orange", 1.0, "kilograms"},
+                        {"mango", 2.4, "kg"},
+                        {"orange", 1.0, "kg"},
                         {"sugar", 4.0, "tbsp"}
                 });
 
@@ -240,16 +237,16 @@ public class RecipeRepository {
                         {"cheese", 2.0, "slices"}
                 });
 
-        addRecipeWithIngredients("Vermicilli", "brown cardamon, cinnamon and vermicilli, add water and milk, thicken with condensed milk, butter and sugar.",
+        addRecipeWithIngredients("Vermicilli", "in a pot brown cardamon, cinnamon and vermicilli, add water and milk, thicken with condensed milk, butter and sugar.",
                 new Object[][]{
-                        {"vermicilli", 250.0, "gram"},
+                        {"vermicilli", 250.0, "grams"},
                         {"cinnamon stick", 2.0, "pieces"},
                         {"cardamon", 5.0, "grams"},
-                        {"water", 350.0, "millilitres"},
-                        {"milk", 350.0, "millitres"},
+                        {"water", 0.35, "litres"},
+                        {"milk", 0.35, "litres"},
                         {"butter", 3.0, "tbsp"},
                         {"condensed milk", 1.0, "can"},
-                        {"sugar", 125.0, "grams"}
+                        {"sugar", 9.0, "tbsp"}
                 });
     }
 }

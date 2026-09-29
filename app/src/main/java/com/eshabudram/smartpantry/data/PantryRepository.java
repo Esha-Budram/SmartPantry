@@ -14,12 +14,11 @@ public class PantryRepository {
     public PantryRepository(Context context) {
         dbHelper = new PantryDBHelper(context);
     }
-
+//insert item method
     public long insertItem(PantryItem item) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put(PantryDBHelper.COL_NAME, item.getName());
-        cv.put(PantryDBHelper.COL_CATEGORY, item.getCategory());
         cv.put(PantryDBHelper.COL_UNIT, item.getUnit());
         cv.put(PantryDBHelper.COL_QUANTITY, item.getQuantity());
         cv.put(PantryDBHelper.COL_EXPIRY, item.getExpiryDate());
@@ -27,7 +26,7 @@ public class PantryRepository {
         db.close();
         return id;
     }
-
+// get all items method
     public List<PantryItem> getAllItems() {
         List<PantryItem> items = new ArrayList<>();
         SQLiteDatabase db = dbHelper.getReadableDatabase();
@@ -42,7 +41,6 @@ public class PantryRepository {
                 PantryItem item = new PantryItem();
                 item.setId(cursor.getLong(cursor.getColumnIndexOrThrow(PantryDBHelper.COL_ID)));
                 item.setName(cursor.getString(cursor.getColumnIndexOrThrow(PantryDBHelper.COL_NAME)));
-                item.setCategory(cursor.getString(cursor.getColumnIndexOrThrow(PantryDBHelper.COL_CATEGORY)));
                 item.setQuantity(cursor.getInt(cursor.getColumnIndexOrThrow(PantryDBHelper.COL_QUANTITY)));
                 item.setUnit(cursor.getString(cursor.getColumnIndexOrThrow(PantryDBHelper.COL_UNIT)));
                 item.setExpiryDate(cursor.getString(cursor.getColumnIndexOrThrow(PantryDBHelper.COL_EXPIRY)));
@@ -55,18 +53,17 @@ public class PantryRepository {
         return items;
     }
 
-    // Updates an existing pantry item. The item's ID tells us which row to change.
+    //updates an existing pantry item. The items id tells which row to change
     public void updateItem(PantryItem item) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
         ContentValues values = new ContentValues();
         values.put(PantryDBHelper.COL_NAME, item.getName());
-        values.put(PantryDBHelper.COL_CATEGORY, item.getCategory());
         values.put(PantryDBHelper.COL_QUANTITY, item.getQuantity());
         values.put(PantryDBHelper.COL_UNIT, item.getUnit());
         values.put(PantryDBHelper.COL_EXPIRY, item.getExpiryDate());
 
-        // only update the row matching this item's ID
+        // only update the row matching this items id
         db.update(
                 PantryDBHelper.TABLE_ITEMS, values, PantryDBHelper.COL_ID + " = ?",
                 new String[]{String.valueOf(item.getId())}
@@ -75,7 +72,7 @@ public class PantryRepository {
         db.close();
     }
 
-    // Deletes a pantry item by its ID
+    //deletes a pantry item by its id
     public void deleteItem(long id) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 

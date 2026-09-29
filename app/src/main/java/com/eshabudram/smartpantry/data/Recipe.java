@@ -3,8 +3,8 @@ import java.util.ArrayList;
 import java.util.List;
 import com.eshabudram.smartpantry.data.RecipeIngredient;
 
-// This class represents one recipe.
-// A recipe has a name, some preparation steps, and a list of ingredients it needs.
+// This class represents 1 recipe
+// A recipe has a name, steps, and a list of ingredients it needs.
 public class Recipe{
     private long id;
     private String name;

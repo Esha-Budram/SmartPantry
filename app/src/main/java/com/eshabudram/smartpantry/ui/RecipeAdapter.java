@@ -17,7 +17,7 @@ public class RecipeAdapter extends ArrayAdapter<Recipe>{
     public RecipeAdapter(Context context, List<Recipe> recipes){
         super(context, 0, recipes);
     }
-
+    //android calls this once per row to build that rows view or reuse it
     @NonNull
     @Override
     public View getView(int position, View convertView, @NonNull ViewGroup parent){
@@ -25,7 +25,9 @@ public class RecipeAdapter extends ArrayAdapter<Recipe>{
             convertView=LayoutInflater.from(getContext())
                     .inflate(R.layout.recipe_item, parent,false);
         }
+        //getting recipe for current row
         Recipe recipe=getItem(position);
+        //filling in the recipes name
         TextView textRecipeName=convertView.findViewById(R.id.textRecipeName);
         textRecipeName.setText(recipe.getName());
         return convertView;
