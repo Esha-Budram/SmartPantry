@@ -39,5 +39,8 @@ Limitations
 - Matching compares quantity numbers only; units are not converted.
 - The expiring-items toggle saves a preference, but no notification is sent to the user yet.
 
+Video demonstration
+- Found in GitHub -> app/src/main/res/raw
+
 Author
 Esha Budram - Student No: 402311115 - Mobile App Development 700
